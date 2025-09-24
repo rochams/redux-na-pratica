@@ -25,8 +25,10 @@ export default connect(mapStateToProps)(App);
 ```
 import { actionCreatorCriada } from '../store/actions/action...';  
 
-function mapActionCreatorToProps(num) {
-    actionOne: actionCreatorCriada(num)
+function mapActionCreatorToProps() {
+    actionOne: function (num) {
+        actionCreatorCriada(num)
+    }
 }
 ```
 
@@ -35,3 +37,15 @@ function mapActionCreatorToProps(num) {
 export default connect(mapStateToProps, mapActionCreatorToProps)(App);
 ```
 
+- Implementação do dispatch para disparar o evento gerado a partir do action creator e propagar par o estado de todos os módulos que estão o utilizando;
+
+```
+function mapActionCreatorToProps(dispatch) {
+    return {
+        actionOne: function(arg) {
+            const resultActionOne = actionCreatorCriada(arg)
+            dispatch(resultActionOne)
+        }
+    }
+}
+```
