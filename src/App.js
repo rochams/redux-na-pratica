@@ -1,6 +1,7 @@
 import './App.css';
 import Card from './components/Card';
 import { connect } from 'react-redux';
+import { updateGoal } from './store/actions/match-stats';
 
 function App(props) {
   return (
@@ -24,6 +25,7 @@ function App(props) {
             cartoesVermelhos2={props.time2.cartoesVermelhos}
             width={70}
             height={70}
+            updateGoal={props.newGoal}
           >
           </Card>
         </div>
@@ -39,4 +41,13 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapCreateActionToProps = function (dispatch) {
+  return {
+    newGoal: (time) => {
+      const actionUpdateGoal = updateGoal(time)
+      dispatch(actionUpdateGoal)
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapCreateActionToProps)(App);

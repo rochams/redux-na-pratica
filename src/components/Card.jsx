@@ -25,6 +25,7 @@ export default function Card (props) {
                 <h4>Escanteios: { escanteios1 }</h4>
                 <h4>Cartões Amarelos: { cartoesAmarelos1 }</h4>
                 <h4>Cartões Vermelhos: { cartoesVermelhos1 }</h4>
+                <button className="btn-goal" onClick={() => props.updateGoal(1)}>GOL</button>
             </div>
         </div>
         <div className="card">
@@ -36,6 +37,7 @@ export default function Card (props) {
                 <h4>Escanteios: { escanteios2 }</h4>
                 <h4>Cartões Amarelos: { cartoesAmarelos2 }</h4>
                 <h4>Cartões Vermelhos: { cartoesVermelhos2 }</h4>
+                <button className="btn-goal" onClick={() => props.updateGoal(2)}>GOL</button>
             </div>
         </div>
         </>

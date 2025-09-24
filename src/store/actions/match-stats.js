@@ -1,6 +1,6 @@
-const updateGoal = () => {
+export const updateGoal = (time) => {
     return {
         type: 'ADD_GOAL',
-        payload: 1
+        payload: time
     }
 }
