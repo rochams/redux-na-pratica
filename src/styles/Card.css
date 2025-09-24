@@ -1,0 +1,41 @@
+.card {
+    background-color: rgb(8, 33, 78);
+    color: #FFF;
+    font-weight: 600;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.card h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.card-header {
+    padding: .5rem;
+    border: 2px solid #19b6ff;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-header img {
+    border: none;
+}
+
+.card-header h2 {
+    margin: 0;
+}
+
+.card-body {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #19b6ff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
