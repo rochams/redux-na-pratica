@@ -1,8 +1,23 @@
 import { combineReducers, legacy_createStore as createStore} from 'redux';
 
+const initialStateTeam1 =  {
+    gols: 0,
+    escanteios: 0,
+    cartoesAmarelos: 0,
+    cartoesVermelhos: 0,
+    source: "/images/cruzeiro.svg"
+}
+const initialStateTeam2 =  {
+    gols: 0,
+    escanteios: 0,
+    cartoesAmarelos: 0,
+    cartoesVermelhos: 0,
+    source: "/images/barca.png"
+}
+
 const reducers = combineReducers({
 
-    time1: function (state, action) {
+    time1: function (state=initialStateTeam1, action) {
 
         switch(action.type) {
             case 'ADD_GOAL':
@@ -12,25 +27,24 @@ const reducers = combineReducers({
                         gols: state.gols += 1,
                     };
                 }
-                break;
+                return state;
             default:
-                return {
-                    gols: 3,
-                    escanteios: 0,
-                    cartoesAmarelos: 0,
-                    cartoesVermelhos: 0,
-                    source: "/images/cruzeiro.svg"
-                }
+                return state;
         }
     },
-    time2: function (state, action) {
+    time2: function (state=initialStateTeam2, action) {
 
-        return {
-            gols: 2,
-            escanteios: 0,
-            cartoesAmarelos: 0,
-            cartoesVermelhos: 0,
-            source: "/images/barca.png"
+        switch(action.type) {
+            case 'ADD_GOAL':
+                if (action.payload === 2) {
+                    return {
+                        ...state,
+                        gols: state.gols += 1,
+                    };
+                }
+                return state;
+            default:
+                return state;
         }
     }
 
