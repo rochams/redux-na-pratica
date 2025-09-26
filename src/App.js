@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapCreateActionToProps = function (dispatch) {
+const mapDispatchToProps = function (dispatch) {
   return {
     newGoal: (time) => {
       const actionUpdateGoal = updateGoal(time)
@@ -50,4 +50,4 @@ const mapCreateActionToProps = function (dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapCreateActionToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
