@@ -2,7 +2,9 @@
 
 - Criação de um diretório store, no qual será criado o 'storeConfig.js' criado nesse app, usando os métodos de createStore e combineReducers (depende da versão);
 - Importação do storeConfig na página inicial do app, importação do provider para envelopar o módulo principal e inlcuir o store no provider;
-- No app principal e nos demais módulos mnecessários, criar a função mapStateToProps para mapear os estados para as props respectivas e assim propagar os dados;
+- No app principal e nos demais módulos necessários, criar a função mapStateToProps para mapear os estados para as props respectivas e assim propagar os dados;
+- Ou seja, ele mapeia os dados que estão no meu reducer para o componente em que a funcao mapStateToProps está sendo criada.
+- E essa conexão é realizada através do método connect, que as conecta entre si como sugere o nome.
 
 ```
 const mapStateToProps = (state) => {
